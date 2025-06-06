@@ -3,6 +3,9 @@
 
 `generate_queries_v4.py` automates query generation and data collection from a [SearXNG](https://docs.searxng.org/) instance. Starting with a seed query, it expands searches using modifier terms and saves results to CSV.
 
+## Intended for self-hosted SearxNG instances
+This should in theory work with public instances that do not require an API key, but it is reccomended to host it yourself from [https://github.com/searxng/searxng
+](url)
 ## Key Features
 
 - **Query Expansion**: Combines base queries with terms from `modifiers.csv`
@@ -40,7 +43,7 @@ Set these environment variables before execution:
 
 | Variable                    | Default Value               | Description |
 |-----------------------------|-----------------------------|-------------|
-| `SEARXNG_URL`               | `http://localhost:8080/search` | **Required** SearXNG endpoint |
+| `SEARXNG_URL`               | `https://example.gov.biz/search` | **Required** SearXNG endpoint set to the instance you're using|
 | `OUTPUT_CSV_FILENAME`       | `queries_with_urls.csv`     | Output filename |
 | `TOP_N_RESULTS_PER_QUERY`   | `2666`                      | Max unique results per query |
 | `MAX_PAGES_TO_FETCH_PER_QUERY` | `100`                    | Max pages per query |
