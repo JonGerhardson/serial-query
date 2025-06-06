@@ -1,5 +1,5 @@
 
-# SearXNG Query Generator v4
+# SearXNG scraper
 
 `serial_query.py` automates query generation and data collection from a [SearXNG](https://docs.searxng.org/) instance. Starting with a seed query, it expands searches using modifier terms and saves results to CSV.
 
