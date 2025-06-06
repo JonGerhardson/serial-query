@@ -3,9 +3,35 @@
 
 `generate_queries_v4.py` automates query generation and data collection from a [SearXNG](https://docs.searxng.org/) instance. Starting with a seed query, it expands searches using modifier terms and saves results to CSV.
 
+Example logs with max items set to six for the sake of brevity. 
+```
+ python serial-query.py
+Successfully loaded 49 modifier terms from /poath/to/serial-query/modifiers.csv
+--- Query Generation Utility (v4 - Pause/Resume, Progressive Save, Auto-Retry) ---
+Enter initial seed query: Best ice cream parlor
+
+--- Processing query 1/50: "Best ice cream parlor" ---
+
+Fetching up to 6 new items, across max 100 pages for query: "Best ice cream parlor" (starting page 1)
+🔍 Searching SearXNG (page 1) for: "Best ice cream parlor"
+Saved 38 new items from page 1 for "Best ice cream parlor". Total for this query: 38.
+Collected 38 new items, reaching target of 6 for "Best ice cream parlor".
+Finished fetching for "Best ice cream parlor". Total new items added to CSV for this query: 38.
+
+--- Processing query 2/50: "Best ice cream parlor California" ---
+
+Fetching up to 6 new items, across max 100 pages for query: "Best ice cream parlor California" (starting page 1)
+
+```
+
+
 ## Intended for self-hosted SearxNG instances
 This should in theory work with public instances that do not require an API key, but it is reccomended to host it yourself from [https://github.com/searxng/searxng
-](url)
+](https://github.com/searxng/searxng)
+
+## Takes a while to run
+Bot avoidance in this script is unsophisticated. It just sets a really long delay between requests. Expect a long run to take a day or more. You can adjust the delay between requests in the script. Default is minimum 90 seconds maximum 300 seconds. 
+
 ## Key Features
 
 - **Query Expansion**: Combines base queries with terms from `modifiers.csv`
