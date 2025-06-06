@@ -1,7 +1,7 @@
 
 # SearXNG Query Generator v4
 
-`generate_queries_v4.py` automates query generation and data collection from a [SearXNG](https://docs.searxng.org/) instance. Starting with a seed query, it expands searches using modifier terms and saves results to CSV.
+`serial_query.py` automates query generation and data collection from a [SearXNG](https://docs.searxng.org/) instance. Starting with a seed query, it expands searches using modifier terms and saves results to CSV.
 
 Example logs with max items set to six for the sake of brevity. 
 ```
@@ -54,7 +54,7 @@ Bot avoidance in this script is unsophisticated. It just sets a really long dela
   ```
 
 ### Setup
-1. Place `generate_queries_v4.py` in your working directory
+1. Place `serial_query.py` in your working directory
 2. Create `modifiers.csv` with one term per line:
    ```plaintext
    review
@@ -91,7 +91,7 @@ set SEARXNG_URL="https://searx.example.com/search"
 
 ### Starting New Session
 ```bash
-python generate_queries_v4.py
+python serial_query.py
 > Enter initial seed query: [Your Search Term Here]
 ```
 
