@@ -30,7 +30,7 @@ This should in theory work with public instances that do not require an API key,
 ](https://github.com/searxng/searxng)
 
 ## Takes a while to run
-Bot avoidance in this script is unsophisticated. It just sets a really long delay between requests. Expect a long run to take a day or more. You can adjust the delay between requests in the script. Default is minimum 90 seconds maximum 300 seconds. 
+Bot avoidance in this script is unsophisticated. It just sets a really long delay between requests. Expect a long run to take a day or more. You can adjust the delay between requests in the script. Default is minimum 90 seconds maximum 300 seconds. It saves state to a json file so you can stop and restart where you left off if needed. 
 
 ## Key Features
 
